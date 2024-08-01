@@ -1,0 +1,12 @@
+# Run with 	docker run --rm -it -v .:/tmp $(REPO)$(IMAGE):latest /bin/bash
+FROM debian:bookworm-slim
+
+RUN apt-get update && \
+    apt install -y make \
+        texlive \
+        texlive-latex-extra \
+        texlive-fonts-extra \
+        texlive-extra-utils \
+        latexmk
+
+WORKDIR /tmp
